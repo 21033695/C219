@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+</style>
+</head>
+<body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <ul>
+        <li><a href="Page1.html">About Me</a></li>
+        <li><a href="Page2.html">My Fav Food</a></li>
+    </ul>
+    
+    <div style="padding:0 16px;">
+        <h2 class= "text">About Me</h2>
+
+        <script>
+        const text = document.querySelector('.text');
+        text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
+        
+        anime.timeline({
+          loop:true
+        
+        })
+
+        .add({
+          targets: '.text span',
+          translateY: [-600, 0],
+          scale: [10,1],
+          opacity: [0,1],
+          easing: "easeOutExpo",
+          duration: 1500,
+          delay: anime.stagger(100),
+
+        })
+        </script>
+
+        <img class="image" src="images/selfPic.jfif" alt="selfPic" width="350" height="350">
+        <script>
+        anime({
+        targets: '.image',
+        translateX: 250,
+        scale: 1,
+        rotate: '2turn',
+        direction: 'alternate',
+        loop:true,
+        easing: 'easeInOutSine',
+        duration: 1500,
+        });
+        </script>
+        
+        <h3 class= "text">Hi, my name is Akmal :)</h3>
+        <script>
+         const text = document.querySelector('.text');
+        text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
+        
+        anime.timeline({
+          loop:true
+        
+        })
+
+        .add({
+          targets: '.text span',
+          translateY: [-600, 0],
+          scale: [10,1],
+          opacity: [0,1],
+          easing: "easeOutExpo",
+          duration: 1500,
+          delay: anime.stagger(100),
+
+        })
+          </script>
+        <p>I am a student from Republic Polytechnic studying Design & Development!</p>
+      </div>
+      
+
+</body>
+</html>
